@@ -7,60 +7,85 @@
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     <script src="  https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
      
+     <!-- FA ICONS -->
+     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
      <!-- CUSTOM STYLES -->
      <link rel="stylesheet" href="style.css">
-     <script src="script.js"></script>
+     <script src="theme.js"></script>
 
      <!-- CODE MIRROR -->
      <script src="codemirror/lib/codemirror.js"></script>
-     <script src="codemirror/mode/xml/xml.js"></script>
+     <script src="codemirror/mode/clike/clike.js"></script>
      <link href="codemirror/lib/codemirror.css" rel="stylesheet">
      <link href="codemirror/theme/dracula.css" rel="stylesheet">
+     <link href="codemirror/theme/3024-day.css" rel="stylesheet">
 </head>
 <body>
+     <nav id="myNavBar" class="navbar">
+          <div class="container-fluid">
+               <div class="navbar-header">
+                    <img id="myLogo" class="master-it-logo" src="img/master-it-light.png" alt="Master-it">
+               </div>
+               <ul class="nav navbar-nav">
+                    <li class="active">
+                         <a href="#">Home</a>
+                    </li>
+                    <li>
+                         <a href="#">Classes</a>
+                    </li>
+                    <li>
+                         <a href="#">Problems</a>
+                    </li>
+                    <li>
+                         <a href="#">Leaderboard</a>
+                    </li>
+               </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    <li><a onclick="switchTheme()"><div id="toggle-theme" class="fas fa-lg fa-moon"></div></a></li>
+                    <li><a href="#"><span class="fas fa-lg fa-user-graduate"></span></a></li>
+               </ul>
+          </div>
+     </nav>
 
-<div class="container-fluid my-dark-background">
-     <header class="text-center">
-          <img class="master-it-logo" src="/img/master-it-logo.png" alt="Master-it">
-     </header>
-     
      <section class="container-fluid">
           <div class="row">
-               <div class="col-md-5">
-                    <h3>Problem 7: trackInvestment</h3>
+               <div class="col-md-6">
+                    <h1>
+                         Problem 1: helloWorld
+                         <br><br><br>
+                    </h1>
+                    
+                    <ul class="nav nav-tabs">
+                         <li class="active"><a href="#">Description</a></li>
+                         <li><a href="#">Test</a></li>
+                         <li><a href="#">Statistics</a></li>
+                    </ul>
+
                     <p class="description">
                          <br>
-                         Write a method named trackInvestment that computes the interest earned on a financial
-                         investment. Once per year, the bank pays interest to the investor at a given
-                         fixed rate. As the investment earns interest, that interest is added to the
-                         investment and therefore the interest begins earning interest of its own ("compounding").
-                         <br><br>
-                         Your method should accept three parameters: the initial amount of the investment
-                         in dollars (as a real number such as 1500.0 for $1,500.00), the yearly interest
-                         rate (as a real number such as 3.5 for 3.5% interest) and the number of years for
-                         which to invest (as an integer such as 6 for 6 years).
-                         <br><br>
-                         Your method should print the value of the investment after each year, as well as
-                         the total amount of interest earned over all years. For example, an investment of
-                         $100.00 at 10% interest for 5 years would lead to this call:
+                         Write a method named <code>helloWorld</code> that prints the phrase
+                         "Hello, World" to the screen.
                     </p>
                </div>
-               <div class="col-md-7">
-                    <textarea id="editor">
-                         <p>Code will go over here.</p>
-                    </textarea>
+               <div class="col-md-6">
+                    <p>Type your solution here:</p>
+                    <div id="editor">
+                         <!-- Java Editor -->
+                    </div>
+                    <button onclick="compileCode()">Run Code</button>
                     <script>
-                         var editor = CodeMirror.fromTextEditor(
-                              document.getElementById('editor'), {
-                                   mode: 'xml',
-                                   theme: 'dracula'
-                              });
+                         var javaEditor = CodeMirror(document.getElementById('editor'), 
+                         {
+                              lineNumbers: true,
+                              mode: "text/x-java",
+                              theme: "3024-day"
+                         });
                     </script>
                </div>
           </div>
      </section>
-</div>
-
 </body>
 </html>
