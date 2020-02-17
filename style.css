@@ -1,0 +1,14 @@
+html, body, my-dark-background {
+     background-color: #121212 !important;
+}
+
+.master-it-logo {
+     height: 70px;
+     margin: 20px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+     text-align: left;
+     font-size: 14pt;
+     color: white;
+}
