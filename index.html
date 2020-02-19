@@ -18,6 +18,7 @@
      <!-- CUSTOM STYLES -->
      <link rel="stylesheet" href="style.css">
      <script src="theme.js"></script>
+     <script src="code.js"></script>
 
      <!-- CODE MIRROR -->
      <script src="codemirror/lib/codemirror.js"></script>
@@ -93,7 +94,8 @@
                <div id="editor">
                     <!-- Java Editor -->
                </div>
-               <button onclick="compileCode()">Run Code</button>
+               <button onclick="compile()">Compile</button>
+               <button onclick="run()">Run</button>
                <script>
                     var javaEditor = CodeMirror(document.getElementById('editor'), 
                     {

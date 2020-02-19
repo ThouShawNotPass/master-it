@@ -1,0 +1,12 @@
+Name: Master It
+
+Hostname: https://thoushawnotpass.github.io/master-it/
+
+Client Id: 13cf1d42dbccb5f17a140a32bfffe522525940cebfb5.api.hackerearth.com
+
+Client Secret Key: 143ff8481e32b5f0210a6ae96a29f418474ac08e
+
+Quota
+Run: 1000 | Used: 0
+
+Compile: 1000 | Used: 0
