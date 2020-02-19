@@ -24,7 +24,5 @@ function switchTheme() {
      isDarkMode = !isDarkMode;
 
      // Toggle the rest of the themes
-     navBar.classList.toggle("navbar-inverse"); // navBar
      javaEditor.setOption("theme", isDarkMode ? "dracula" : "3024-day"); // Java editor
 }
-

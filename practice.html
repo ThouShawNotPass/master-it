@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Master-it</title>
+     
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="split.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+
+     <!-- FA ICONS -->
+     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+     <!-- CUSTOM STYLES -->
+     <link rel="stylesheet" href="style.css">
+     <script src="theme.js"></script>
+
+     <!-- CODE MIRROR -->
+     <script src="codemirror/lib/codemirror.js"></script>
+     <script src="codemirror/mode/clike/clike.js"></script>
+     <link href="codemirror/lib/codemirror.css" rel="stylesheet">
+     <link href="codemirror/theme/dracula.css" rel="stylesheet">
+     <link href="codemirror/theme/3024-day.css" rel="stylesheet">
+</head>
+<body>
+     <nav id="myNavBar" class="navbar">
+          <div class="container-fluid">
+               <div class="navbar-header">
+                    <img id="myLogo" class="master-it-logo" src="img/master-it-light.png" alt="Master-it">
+               </div>
+               <ul class="nav navbar-nav">
+                    <li>
+                         <a href="#">Home</a>
+                    </li>
+                    <li>
+                         <a href="#">Classes</a>
+                    </li>
+                    <li class="active">
+                         <a href="#">Problems</a>
+                    </li>
+                    <li>
+                         <a href="#">Leaderboard</a>
+                    </li>
+               </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    <li><a onclick="switchTheme()"><div id="toggle-theme" class="fas fa-lg fa-moon"></div></a></li>
+                    <li><a href="#"><span class="fas fa-lg fa-user-graduate"></span></a></li>
+               </ul>
+          </div>
+     </nav>
+     <div class="content">
+          <div class="split a">
+               <h1>Problem 1: helloWorld<br><br><br></h1>
+               
+               <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#description">Description</a></li>
+                    <li><a data-toggle="tab" href="#submissions">Submissions</a></li>
+                    <li><a data-toggle="tab" href="#style">Style</a></li>
+               </ul>
+               
+               <div class="tab-content">
+                    <div id="description" class="tab-pane fade in active">
+                         <h3>helloWorld</h3>
+                         <p>Write a method named <strong>helloWorld</strong> that prints "Hello, World" to the screen.</p>
+                         <p>For example, a call on 
+                              <code>helloWorld()</code>
+                              would produce the following output:
+                              <pre>Hello, World</pre>
+                         </p>
+                    </div>
+                    <div id="submissions" class="tab-pane fade">
+                         <h4>Success</h4>
+                         <h3>Runtime:</h3><p>1ms (faster than 99.9% of student submissions)</p>
+                         <h3>Memory:</h3><p>49MB (less than 42.0% of student submissions)</p>
+                    </div>
+                    <div id="style" class="tab-pane fade">
+                         <h3>Style Guidelines</h3>
+                         <ul>
+                              <li>Correct Header</li>
+                              <li>Correct Return</li>
+                              <li>Boolean Zen</li>
+                              <li>Recursion Zen</li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+          <div class="split b">
+               <p>Type your solution here:</p>
+               <div id="editor">
+                    <!-- Java Editor -->
+               </div>
+               <button onclick="compileCode()">Run Code</button>
+               <script>
+                    var javaEditor = CodeMirror(document.getElementById('editor'), 
+                    {
+                         lineNumbers: true,
+                         mode: "text/x-java",
+                         theme: "3024-day"
+                    });
+               </script>
+          </div>
+     </div>
+     <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+     <script>
+          Split(['.a', '.b'], {
+               gutterSize: 10,
+               sizes: [20,80],
+               minSize: [400, 700]
+          });
+     </script>
+</body>
+</html>
