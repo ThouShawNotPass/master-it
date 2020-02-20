@@ -19,6 +19,7 @@
      <link rel="stylesheet" href="style.css">
      <script src="theme.js"></script>
      <script src="code.js"></script>
+     <script src="node_modules/hackerearth-node/distribution/index.js"></script>
 
      <!-- CODE MIRROR -->
      <script src="codemirror/lib/codemirror.js"></script>
@@ -94,8 +95,27 @@
                <div id="editor">
                     <!-- Java Editor -->
                </div>
-               <button onclick="compile()">Compile</button>
-               <button onclick="run()">Run</button>
+               <?php
+        if(array_key_exists('button1', $_POST)) { 
+            button1(); 
+        } 
+        else if(array_key_exists('button2', $_POST)) { 
+            button2(); 
+        } 
+        function button1() { 
+            echo "This is Button1 that is selected"; 
+        } 
+        function button2() { 
+            echo "This is Button2 that is selected"; 
+        } 
+    ?> 
+               <form method="post"> 
+                    <input type="submit" name="button1"
+                            class="button" value="Button1" /> 
+                      
+                    <input type="submit" name="button2"
+                            class="button" value="Button2" /> 
+                </form> 
                <script>
                     var javaEditor = CodeMirror(document.getElementById('editor'), 
                     {
@@ -104,6 +124,8 @@
                          theme: "3024-day"
                     });
                </script>
+               <?php include 'index.php'; ?>
+               <?php include 'compile.php'; ?>
           </div>
      </div>
      <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
