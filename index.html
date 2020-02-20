@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
      <title>Master-it</title>
-     
+
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -28,6 +29,7 @@
      <link href="codemirror/theme/dracula.css" rel="stylesheet">
      <link href="codemirror/theme/3024-day.css" rel="stylesheet">
 </head>
+
 <body>
      <nav id="myNavBar" class="navbar">
           <div class="container-fluid">
@@ -48,8 +50,10 @@
                          <a href="#">Leaderboard</a>
                     </li>
                </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                    <li><a onclick="switchTheme()"><div id="toggle-theme" class="fas fa-lg fa-moon"></div></a></li>
+               <ul class="nav navbar-nav navbar-right">
+                    <li><a onclick="switchTheme()">
+                              <div id="toggle-theme" class="fas fa-lg fa-moon"></div>
+                         </a></li>
                     <li><a href="#"><span class="fas fa-lg fa-user-graduate"></span></a></li>
                </ul>
           </div>
@@ -57,18 +61,19 @@
      <div class="content">
           <div class="split a">
                <h1>Problem 1: helloWorld<br><br><br></h1>
-               
+
                <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#description">Description</a></li>
                     <li><a data-toggle="tab" href="#submissions">Submissions</a></li>
                     <li><a data-toggle="tab" href="#style">Style</a></li>
                </ul>
-               
+
                <div class="tab-content">
                     <div id="description" class="tab-pane fade in active">
                          <h3>helloWorld</h3>
-                         <p>Write a method named <strong>helloWorld</strong> that prints "Hello, World" to the screen.</p>
-                         <p>For example, a call on 
+                         <p>Write a method named <strong>helloWorld</strong> that prints "Hello, World" to the screen.
+                         </p>
+                         <p>For example, a call on
                               <code>helloWorld()</code>
                               would produce the following output:
                               <pre>Hello, World</pre>
@@ -76,8 +81,10 @@
                     </div>
                     <div id="submissions" class="tab-pane fade">
                          <h4>Success</h4>
-                         <h3>Runtime:</h3><p>1ms (faster than 99.9% of student submissions)</p>
-                         <h3>Memory:</h3><p>49MB (less than 42.0% of student submissions)</p>
+                         <h3>Runtime:</h3>
+                         <p>1ms (faster than 99.9% of student submissions)</p>
+                         <h3>Memory:</h3>
+                         <p>49MB (less than 42.0% of student submissions)</p>
                     </div>
                     <div id="style" class="tab-pane fade">
                          <h3>Style Guidelines</h3>
@@ -96,29 +103,32 @@
                     <!-- Java Editor -->
                </div>
                <?php
-        if(array_key_exists('button1', $_POST)) { 
-            button1(); 
-        } 
-        else if(array_key_exists('button2', $_POST)) { 
-            button2(); 
-        } 
-        function button1() { 
-            echo "This is Button1 that is selected"; 
-        } 
-        function button2() { 
-            echo "This is Button2 that is selected"; 
-        } 
-    ?> 
-               <form method="post"> 
-                    <input type="submit" name="button1"
-                            class="button" value="Button1" /> 
-                      
-                    <input type="submit" name="button2"
-                            class="button" value="Button2" /> 
-                </form> 
+               // Setting up the Hackerearth API
+               $hackerearth = Array(
+                    'client_secret' => 'b1803e335e227a1320fc6dc3587a0d496e97d3e5',   //(REQUIRED) Obtain this by registering your app at http://www.hackerearth.com/api/register/
+                    'time_limit' => '5',               //(OPTIONAL) Time Limit (MAX = 5 seconds )
+                    'memory_limit' => '262144'         //(OPTIONAL) Memory Limit (MAX = 262144 [256 MB])
+               );
+                    if(array_key_exists('button1', $_POST)) { 
+                         button1(); 
+                    } 
+                    else if(array_key_exists('button2', $_POST)) { 
+                         button2(); 
+                    } 
+                    function button1() { 
+                         echo "This is Button1 that is selected"; 
+                    } 
+                    function button2() { 
+                         echo "This is Button2 that is selected"; 
+                    } 
+               ?>
+               <form method="post">
+                    <input type="submit" name="button1" class="button" value="Button1" />
+
+                    <input type="submit" name="button2" class="button" value="Button2" />
+               </form>
                <script>
-                    var javaEditor = CodeMirror(document.getElementById('editor'), 
-                    {
+                    var javaEditor = CodeMirror(document.getElementById('editor'), {
                          lineNumbers: true,
                          mode: "text/x-java",
                          theme: "3024-day"
@@ -132,9 +142,10 @@
      <script>
           Split(['.a', '.b'], {
                gutterSize: 10,
-               sizes: [20,80],
+               sizes: [20, 80],
                minSize: [400, 700]
           });
      </script>
 </body>
+
 </html>

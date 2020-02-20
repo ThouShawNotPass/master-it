@@ -23,6 +23,6 @@ $config['language']='PYTHON';      //(REQUIRED) Choose any one of the below
 $response = compile($hackerearth,$config); // Use this $response the way you want , it consists data in PHP Array
 
 // Printing the response
-echo "<pre>".print_r($response,1)."</pre>";
+echo "<p>".print_r($response,1)."</p>";
 
 ?>
