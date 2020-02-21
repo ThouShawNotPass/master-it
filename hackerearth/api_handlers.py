@@ -1,17 +1,13 @@
 import json
 import urllib
-import urllib2
 import requests
 
 from settings import COMPILE_API_ENDPOINT
 from settings import RUN_API_ENDPOINT
 from settings import CLIENT_SECRET
 
-import result
-
 from result import CompileResult
 from result import RunResult
-
 
 class HackerEarthAPI(object):
      def __init__(self, params):
@@ -42,7 +38,6 @@ class HackerEarthAPI(object):
           except Exception as err:
                print(err)
           return response
-
 
      def __result(self, res):
           result = json.load(res)

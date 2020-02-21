@@ -17,14 +17,12 @@ class BaseAPIResult(object):
         response_dict = self._desiarialize_response(response)
         self.__dict__.update(response_dict)
 
-
 class CompileResult(BaseAPIResult):
     """Represents the compilation results from the compile
     end point.
     """
     def __init__(self, response):
         super(CompileResult, self).__init__(response)
-
 
 class RunResult(BaseAPIResult):
     """Represents the excecution results from the run end point of the
@@ -44,7 +42,7 @@ class RunResult(BaseAPIResult):
         key/value pairs.
         """
         flattened_dict = {}
-        for (key, value) in dict_.iteritems():
+        for (key, value) in dict_.items():
             if isinstance(value, dict):
                 flattened_dict.update(self._flatten_dict(value))
             else:

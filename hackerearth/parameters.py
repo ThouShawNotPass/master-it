@@ -48,7 +48,7 @@ class BaseAPIParameters(object):
         """Removes parameters whose values are set to None.
         """
         clean_params = {}
-        for key, value in params.iteritems():
+        for key, value in params.items():
             if value is not None:
                 clean_params[key] = value
 
@@ -57,19 +57,18 @@ class BaseAPIParameters(object):
 
 class CompileAPIParameters(BaseAPIParameters):
     def __init__(self, client_secret, source, lang,
-                 async=0,
-                 id=None,
-                 save=1,
-                 callback='',
-                 compressed=1):
-        super(CompileAPIParameters, self).__init__(client_secret,
-                                                   source, lang)
+                 async_val = 0,
+                 id = None,
+                 save = 1,
+                 callback = '',
+                 compressed = 1):
+        super(CompileAPIParameters, self).__init__(client_secret, source, lang)
 
         self.id = id
         self.save = save
         self.callback = callback
         self.compressed = compressed
-        self.async = async
+        self.async_val = async_val
 
     def _build_params_dict(self):
         params = super(CompileAPIParameters, self)._build_params_dict()
@@ -79,7 +78,7 @@ class CompileAPIParameters(BaseAPIParameters):
             'save': self.save,
             'callback': self.callback,
             'compressed': self.compressed,
-            'async': self.async
+            'async': self.async_val
             })
         return params
 
@@ -89,26 +88,25 @@ class RunAPIParameters(CompileAPIParameters):
                  program_input=None,
                  time_limit=settings.RUN_TIME_UPPER_LIMIT,
                  memory_limit=settings.MEMORY_UPPER_LIMIT,
-                 async=0,
+                 async_val=0,
                  id=None,
                  save=1,
                  callback='',
                  compressed=1,
                  html=1,
                  compiled=0):
-        super(RunAPIParameters, self).__init__(client_secret,
-                                               source, lang)
+        super(RunAPIParameters, self).__init__(client_secret, source, lang)
 
         self.id = id
         self.save = save
         self.callback = callback
         self.compressed = compressed
-        self.async = async
+        self.async_val = async_val
         self.html = html
         self.compiled = compiled
         self.time_limit = min(time_limit, settings.RUN_TIME_UPPER_LIMIT)
         self.memory_limit = min(memory_limit, settings.MEMORY_UPPER_LIMIT)
-        print self.memory_limit
+        print(self.memory_limit)
 
     def _build_params_dict(self):
         params = super(RunAPIParameters, self)._build_params_dict()
