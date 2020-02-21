@@ -8,7 +8,7 @@ from api_handlers import HackerEarthAPI
 
 client_secret = '143ff8481e32b5f0210a6ae96a29f418474ac08e'
 
-source = open('hackerearth/test_source.py', 'r').read()
+source = open('hackerearth/source.java', 'r').read()
 lang = SupportedLanguages.PYTHON
 compressed = 1
 html = 0
